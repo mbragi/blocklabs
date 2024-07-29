@@ -1,16 +1,23 @@
-// 1. Create a function that takes in two arrays of numbers and returns a number.
-// 2. Sort the two arrays in ascending order.
-// 3. Create a new array by merging the two arrays.
-// 4. Check if the length of the new array is even.
-// 5. If the length of the new array is even, return the average of the two middle numbers.
-// 6. If the length of the new array is odd, return the middle number.
-// 7. Return the result.
+// Create a function that takes in two arrays of numbers and returns a number.
+function findMedianSortedArrays(arr1: number[], arr2: number[]): number {
+    // Concatenate the two arrays and sort them in ascending
+    const mergedArray = arr1.concat(arr2).sort((a, b) => a - b);
 
-
-function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-    const mergedArray = nums1.concat(nums2).sort((a, b) => a - b);
+    let result: number = 0;
     const length = mergedArray.length;
-    return length % 2 === 0 ? (mergedArray[length / 2 - 1] + mergedArray[length / 2]) / 2 : mergedArray[Math.floor(length / 2)];
+    const isEven = length % 2 === 0;
+    const isOdd = length % 2 !== 0;
+    // If the length of the new array is even, return the average of the two middle numbers
+    if (isEven) {
+        const middleIndex = length / 2;
+        result = (mergedArray[middleIndex] + mergedArray[middleIndex - 1]) / 2;
+    }
+    if (isOdd) {
+        // If the length of the new array is odd, return the middle number
+        const middleIndex = Math.floor(length / 2);
+        result = mergedArray[middleIndex];
+    }
+    return result;
 };
 
 // Test cases
