@@ -1,9 +1,9 @@
-import IUser from '@/interfaces/user.model.interface';
+import IUser from '@/interfaces/user.interface';
 import { Schema, model } from 'mongoose';
 
 const UserSchema = new Schema<IUser>(
 	{
-		fullName: {
+		username: {
 			type: String,
 		},
 		email: {
@@ -13,26 +13,6 @@ const UserSchema = new Schema<IUser>(
 		hashedPassword: {
 			type: String,
 			unique: true,
-		},
-		role: {
-			type: String,
-			enum: ['customer', 'admin'],
-			default: 'customer',
-		},
-		address: {
-			type: String,
-		},
-		region: {
-			type: String,
-		},
-		city: {
-			type: String,
-		},
-		phoneNumber: {
-			type: String,
-		},
-		resetToken: {
-			type: String,
 		},
 		refreshToken: {
 			type: String,

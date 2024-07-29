@@ -1,7 +1,7 @@
 import { compare, hash } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { CreateUserDto } from '@/dtos/users/CreateUser.dto';
-import User from '@/interfaces/user.model.interface';
+import User from '@/interfaces/user.interface';
 import userModel from '@/models/users.model';
 import { isEmpty } from 'class-validator';
 import { HttpException } from '@/exceptions/HttpException';

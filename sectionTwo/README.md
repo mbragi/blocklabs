@@ -13,18 +13,14 @@ To run the Folder Section Two code in this project, follow the steps below:
 
     This will download and install all the required dependencies specified in the `package.json` file.
 
-4.  Create a `.env` file in the root directory of the project and add your MongoDB connection string. For example:
-
-    env
-
-    `MONGODB_URI=mongodb://localhost:27017/library
-    JWT_SECRET=your_jwt_secret`
+4.  Create a `.env` file in the root directory of this folder and add your enviromental variables as specified in the .env.example
 
 5.  Once the dependencies are installed and the environment variables are set, you can start the application by running the following command:
 
-    `npm run start`
+    `npm run start:dev`
 
-    This command will execute the `start` script defined in the `package.json` file, which will start the Express server and connect to MongoDB.
+    This command will execute the `start` script defined in the `package.json` file, which will start create a mongodb locally using docker and start the dev server using nodemon.
+    
 
 API Endpoints
 -------------

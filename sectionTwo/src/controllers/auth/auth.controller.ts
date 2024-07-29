@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { CreateUserDto } from '@/dtos/users/CreateUser.dto';
 // import RequestWithUser from '@/interfaces/user.model.interface';
-import User from '@/interfaces/user.model.interface';
+import User from '@/interfaces/user.interface';
 import AuthService from '@/services/auth/auth.service';
 import { LoginUserDto } from '@/dtos/auth/login.dto';
 
@@ -30,17 +30,14 @@ class AuthController {
 		}
 	};
 
-	// public logOut = async (req: RequestWithUser, res: Response, next: NextFunction) => {
-	// 	try {
-	// 		const userData: User = req.user;
-	// 		const logOutUserData: User = await this.authService.logout(userData);
+	public logOut = async (req: Request, res: Response, next: NextFunction) => {
+		try {
+			// implement logic to invalidate the access token
+		} catch (error) {
+			next(error);
+		}
+	};
 
-	// 		res.setHeader('Set-Cookie', ['Authorization=; Max-age=0']);
-	// 		res.status(200).json({ data: logOutUserData, message: 'logout' });
-	// 	} catch (error) {
-	// 		next(error);
-	// 	}
-	// };
 }
 
 export default AuthController;
