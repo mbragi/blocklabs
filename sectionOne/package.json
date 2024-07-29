@@ -1,0 +1,13 @@
+{
+  "name": "sectionone",
+  "version": "1.0.0",
+  "description": "This repository answers section one of the interview question",
+  "main": "index.js",
+  "scripts": {
+    "start": "node questionOne.js",
+    "build": "tsc -p .",
+    "prod": "npm run build && npm run start"
+  },
+  "author": "Gar Manji Michael",
+  "license": "ISC"
+}
